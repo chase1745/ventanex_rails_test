@@ -1,5 +1,5 @@
 class PayAccountsController < ApplicationController
-  before_action :get_pay_account, only: [:show, :destroy, :new]
+  before_action :get_pay_account, only: [:show, :destroy]
 
   def index
     @pay_accounts = PayAccount.all
@@ -8,7 +8,19 @@ class PayAccountsController < ApplicationController
   def show
   end
 
+  def new
+    @pay_account = PayAccount.new
+  end
+
   def create
+    @pay_account = PayAccount.new(pay_account_params)
+    if @pay_account.save
+      puts 'saved'
+    else
+      puts 'error'
+    end
+    redirect_to pay_accounts_path
+
   end
 
   def destroy

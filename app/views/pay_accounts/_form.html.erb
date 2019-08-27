@@ -1,0 +1,21 @@
+<%= form_for pay_account do |f| %>
+  <div class="form-group">
+    <label>Nickname:</label>
+    <%= f.text_field :nickname, class: 'form-control', placeholder: 'Test Account Name' %>
+  </div>
+
+  <div class="form-group">
+    <label>Account Type:</label>
+    <%= f.select(:account_type,
+                 PayAccount.account_types.keys.map {|account_type| [account_type.titleize, account_type]},
+                 {},
+                 class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
+    <label>Account Number:</label>
+    <%= f.text_field :account_number, class: 'form-control', placeholder: '111111111111' %>
+  </div>
+
+  <%= f.submit 'Submit', class: 'btn btn-success submit-btn' %>
+<% end %>
