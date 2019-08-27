@@ -28,8 +28,8 @@
                   <button type="button" class="btn btn-sm btn-default">hide</button>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-warning">Show</button>
-                  <button type="button" class="btn btn-danger">Delete</button>
+                  <%= link_to 'Show', pay_account, class: 'btn btn-warning' %>
+                  <%= link_to 'Delete', pay_account, method: :delete, class: 'btn btn-danger' %>
                 </td>
               </tr>
             <% end %>
