@@ -20,8 +20,8 @@
             <tr>
               <td><label>Account Number:</label></td>
               <td>
-                <%= @pay_account.account_number %>
-                <button type="button" class="btn btn-sm btn-default">hide</button>
+                <p id="<%= @pay_account.id %>-account-number" class="account-number"><%= @pay_account.account_number %></p>
+                <button id="<%= @pay_account.id %>-hide-btn" type="button" class="btn btn-sm btn-default hide-btn">hide</button>
               </td>
             </tr>
           </tbody>
